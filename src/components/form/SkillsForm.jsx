@@ -27,20 +27,20 @@ export default function SkillsForm({ skills, addSkill, removeSkill }) {
 
   return (
     <FormLayout title="Skills">
-      <div className="space-y-4">
+      <div className="space-y-3 sm:space-y-4">
         {/* Add Skill Input */}
-        <form onSubmit={handleAddSkill} className="flex gap-2">
+        <form onSubmit={handleAddSkill} className="flex flex-col sm:flex-row gap-2">
           <input
             type="text"
             value={skillInput}
             onChange={(e) => setSkillInput(e.target.value)}
             onKeyPress={handleKeyPress}
-            placeholder="Add a skill (e.g., JavaScript, React, Python)"
+            placeholder="Add a skill (e.g., JavaScript, React)"
             className="input-field flex-1"
           />
           <button
             type="submit"
-            className="btn-primary whitespace-nowrap"
+            className="btn-primary whitespace-nowrap text-sm sm:text-base py-2.5"
           >
             Add Skill
           </button>
@@ -52,7 +52,7 @@ export default function SkillsForm({ skills, addSkill, removeSkill }) {
             {skills.map((skill, index) => (
               <div
                 key={index}
-                className="bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 px-4 py-2 rounded-lg flex items-center gap-2 group"
+                className="bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg flex items-center gap-2 group text-sm sm:text-base"
               >
                 <span className="font-medium">{skill}</span>
                 <button
@@ -61,7 +61,7 @@ export default function SkillsForm({ skills, addSkill, removeSkill }) {
                   aria-label={`Remove ${skill}`}
                 >
                   <svg
-                    className="w-4 h-4"
+                    className="w-3.5 h-3.5 sm:w-4 sm:h-4"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"

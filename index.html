@@ -2,10 +2,38 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" id="favicon" type="image/png" href="/src/assets/makeairesume.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI Resume Builder - Create Professional Resumes</title>
     <meta name="description" content="Build professional, ATS-friendly resumes with AI enhancement. Free resume builder with multiple templates." />
+    <script>
+      // Create rounded favicon
+      window.addEventListener('DOMContentLoaded', function() {
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        img.onload = function() {
+          const canvas = document.createElement('canvas');
+          const size = 64;
+          canvas.width = size;
+          canvas.height = size;
+          const ctx = canvas.getContext('2d');
+          
+          // Draw circular clip
+          ctx.beginPath();
+          ctx.arc(size/2, size/2, size/2, 0, Math.PI * 2);
+          ctx.closePath();
+          ctx.clip();
+          
+          // Draw image
+          ctx.drawImage(img, 0, 0, size, size);
+          
+          // Set as favicon
+          const link = document.getElementById('favicon');
+          link.href = canvas.toDataURL('image/png');
+        };
+        img.src = '/src/assets/makeairesume.png';
+      });
+    </script>
   </head>
   <body>
     <div id="root"></div>

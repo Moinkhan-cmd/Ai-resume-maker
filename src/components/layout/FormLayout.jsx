@@ -6,7 +6,7 @@
 export default function FormLayout({ title, children }) {
   return (
     <div className="section-card">
-      <h2 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">
+      <h2 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-gray-200 mb-3 sm:mb-4">
         {title}
       </h2>
       {children}

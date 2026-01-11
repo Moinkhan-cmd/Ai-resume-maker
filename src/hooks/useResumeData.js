@@ -342,6 +342,11 @@ export function useResumeData() {
     })
   }, [setResumeData])
 
+  // Import resume data from external source
+  const importResumeData = useCallback((data) => {
+    setResumeData(data)
+  }, [setResumeData])
+
   return {
     resumeData,
     updatePersonalInfo,
@@ -369,7 +374,8 @@ export function useResumeData() {
     updateReference,
     removeReference,
     setTemplate,
-    clearResumeData
+    clearResumeData,
+    importResumeData
   }
 }
 
